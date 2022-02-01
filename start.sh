@@ -1,0 +1,1 @@
+docker run -it stencil_node start

@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  stencil_node:
+    build:
+      context: ./env/node
+    image: stencil_node
+    container_name: mytriorings_stencil_node
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/theme

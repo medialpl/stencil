@@ -1,1 +1,1 @@
-docker build -t docker-stencil env/node
+docker-compose up -d --build --force-recreate
