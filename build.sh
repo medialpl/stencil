@@ -1,0 +1,1 @@
+docker build -t docker-stencil env/node
