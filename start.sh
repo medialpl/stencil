@@ -1,1 +1,1 @@
-docker run -it stencil_node start
+docker-compose up -d
