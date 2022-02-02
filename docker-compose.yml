@@ -4,7 +4,7 @@ services:
     build:
       context: ./env/node
     image: stencil_node
-    container_name: mytriorings_stencil_node
+    container_name: mtr_stencil_node
     ports:
       - 3000:3000
     volumes:
