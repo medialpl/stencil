@@ -5,4 +5,7 @@ Based on [https://medium.com/](https://medium.com/bigcommerce-developer-blog/doc
 1) `git clone git@github.com:bigcommerce/cornerstone.git src`
 2) `build.sh`
 ## Usage
+### Start
 `start.sh`
+### Start with custom command
+`S="start -v BolderMax" docker-compose up`

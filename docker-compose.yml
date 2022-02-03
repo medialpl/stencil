@@ -9,4 +9,6 @@ services:
       - 3000:3000
     volumes:
       - ./src:/theme
-    command: stencil start
+    command: start
+    environment:
+      - "S=${S}"
