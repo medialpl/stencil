@@ -1,1 +1,2 @@
-docker-compose up -d
+export T=cornerstone
+docker-compose up
