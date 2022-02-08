@@ -1,7 +1,7 @@
 # Usage: build.sh <theme_name>
 
-SETUP_CONTAINER=stencil_node_init
-RUNTIME_CONTAINER=stencil_node
+SETUP_CONTAINER=stencil_init
+RUNTIME_CONTAINER=stencil_dev
 
 THEME="${1}"
 THEME_DIRECTORY="$(pwd)/themes/${THEME}"
