@@ -45,4 +45,22 @@ It's possible to pass `stencil` command arguments by using env variable `STENCIL
 
 Example: `THEME=cornerstone STENCIL="start -v Bold" docker-compose up`.
 
-Command above will start the Bold variant of Cornerstone theme. 
+Command above will start the Bold variant of Cornerstone theme.
+
+### Helper scripts
+
+#### Build
+
+Script is bundling container build, npm install and Stencil init actions.
+
+Name: `build.sh`
+
+Usage: `build.sh <theme_name>`
+
+Example: `build.sh cornerstone`
+
+#### Start
+
+Script is starting Stencil with the template placed in `themes\cornerstone`.
+
+Name: `start_cornerstone.sh`
