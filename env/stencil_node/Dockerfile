@@ -1,4 +1,3 @@
-#FROM shooding/ubuntu:18.04-with-nodejs-12
 FROM ubuntu:18.04
 SHELL ["/bin/bash", "--login", "-c"]
 RUN apt-get update && apt-get install -y python3 libsass-dev g++ build-essential git curl

@@ -2,14 +2,12 @@ version: "3.9"
 services:
   stencil_node:
     build:
-      context: ./env/node
+      context: ./env/stencil_node
     image: stencil_node
     container_name: stencil_node
     ports:
       - 3000:3000
-      - 8181:8181
     volumes:
-      - ./themes/${T}:/theme
-    command: start
+      - ./themes/${THEME}:/theme
     environment:
-      - "S=${S}"
+      - "STENCIL=${STENCIL}"

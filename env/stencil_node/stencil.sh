@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ "${S}" ]; then
-  COMMAND=(${S})
+if [ "${STENCIL}" ]; then
+  COMMAND=(${STENCIL})
 	stencil "${COMMAND[@]}"
 elif [ "${1}" = "init" ]; then
-  npm i --unsafe-perm node-sass && stencil init
+  npm i && stencil init
 else
   echo "No Stencil command was provided."
 fi
