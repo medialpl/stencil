@@ -6,6 +6,13 @@ RUNTIME_CONTAINER=stencil_dev
 THEME="${1}"
 THEME_DIRECTORY="$(pwd)/themes/${THEME}"
 
+SETUP_CONTAINER_EXISTS=$(docker container ls -a | grep ${SETUP_CONTAINER})
+if [ "${SETUP_CONTAINER_EXISTS}" ]
+  then
+    echo "Removing ${SETUP_CONTAINER}"
+    docker container rm "${SETUP_CONTAINER}"
+fi
+
 if [ -z "${THEME}" ]
   then
     echo "Please provide the theme name."
