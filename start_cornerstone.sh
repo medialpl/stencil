@@ -1,3 +1,3 @@
-export THEME=cornerstone
-export STENCIL=start
+export THEME=cornerstone_mabelmain
+export STENCIL="start -v mabelmain"
 docker-compose up
