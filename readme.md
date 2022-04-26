@@ -17,7 +17,7 @@ Git clone example: `git clone git@github.com:bigcommerce/cornerstone.git themes/
 Build the image and init the Stencil.
 
 1) `docker build -t stencil_dev ./env/node_stencil`
-2) `docker run -it --name stencil_init  -v $(pwd)/themes/<theme_name>:/theme -p3000:3000 stencil_dev init`
+2) `docker run --rm -it --name stencil_init  -v $(pwd)/themes/<theme_name>:/theme -p3000:3000 stencil_dev init`
 
 Running `init` in step 2) will trigger npm install and then, standard Stencil initialization process.
 
