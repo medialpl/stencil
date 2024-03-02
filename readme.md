@@ -10,13 +10,15 @@ Works on Apple Silicon chips (Mac M1).
 
 Place your theme in the `theme/` directory.
 
-Git clone example: `git clone git@github.com:bigcommerce/cornerstone.git theme/`.
+Example: `git clone git@github.com:bigcommerce/cornerstone.git theme/`.
 
 ### Install
 
-`THEME="<theme_name>" STENCIL="install" docker-compose up`
+Trigger `npm install` and `stencil init` in the container.
 
-Example: `THEME="cornerstone" STENCIL="init" docker-compose up`
+`THEME="<theme_name>" STENCIL="install" STORE_URL="<store_url>" API_TOKEN="<stencil_api_token>" docker-compose up`
+
+Example: `THEME="cornerstone" STENCIL="install" STORE_URL="https://qazwsx.mybigcommerce.com/" API_TOKEN="qazwsx" docker-compose up`
 
 ### Run
 
@@ -30,13 +32,22 @@ Access the frontend locally at: http://localhost:3000
 
 ## Executing Stencil commands
 
-### In the running container
+### Init
+
+Trigger `stencil init` **without** `npm install` in the container.
+
+`THEME="<theme_name>" STENCIL="init" STORE_URL="<store_url>" API_TOKEN="<stencil_api_token>" docker-compose up`
+
+Example: `THEME="cornerstone" STENCIL="init" STORE_URL="https://qazwsx.mybigcommerce.com/" API_TOKEN="qazwsx" docker-compose up`
+
+
+### Run stencil command in the container
 
 Use `docker exec -it stencil_<theme_name> bash` and attach to a running container anytime in order to access shell and execute `stencil` commands.
 
 `docker exec -it stencil_cornerstone bash` 
 
-### On compose
+### Run stencil command on compose
 
 It's possible to pass `stencil` command arguments by using env variable `STENCIL` on `docker-compose` run.
 
