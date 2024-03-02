@@ -1,10 +1,12 @@
 #!/bin/bash
 
 if [ "${STENCIL}" ]; then
+ if [ "${STENCIL}" = "install" ]; then
+  npm install && stencil init
+ else
   COMMAND=(${STENCIL})
 	stencil "${COMMAND[@]}"
-elif [ "${1}" = "init" ]; then
-  npm i && stencil init
+ fi
 else
   echo "No Stencil command was provided."
 fi

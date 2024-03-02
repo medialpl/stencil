@@ -4,67 +4,48 @@ Simple, containerized BigCommerce Stencil development environment.
 
 Works on Apple Silicon chips (Mac M1).
 
-## Usage
+## Clone, install & run!
 
-### Directory structure
+### Clone
 
 Place your theme in the `theme/` directory.
 
 Git clone example: `git clone git@github.com:bigcommerce/cornerstone.git theme/`.
 
-### Build, init & run!
+### Install
 
-#### Build
+`THEME="<theme_name>" STENCIL="install" docker-compose up`
 
-Build the image and init Stencil.
+Example: `THEME="cornerstone" STENCIL="init" docker-compose up`
 
-1) `docker build -t stencil_dev ./env/node_stencil`
-2) `docker run --rm -it --name stencil_init -v $(pwd)/theme/:/theme -p3000:3000 stencil_dev init`
+### Run
 
-Running `init` in step 2) will trigger npm install and then, standard Stencil initialization process.
+Use `THEME="<theme_name> STENCIL="<stencil_command>" docker-compose up` in order to start the container and run your theme. 
 
-#### Init
+Example: `THEME="cornerstone" STENCIL="start -v Bold -c 1" docker-compose up`
 
-#### Run
+## Host
 
-Use `STENCIL="<stencil_command>" docker-compose up` in order to start the container and run your theme. 
+Access the frontend locally at: http://localhost:3000
 
-Example: `STENCIL="start -v Bold -c 1" docker-compose up`
+## Executing Stencil commands
 
-#### Host
+### In the running container
 
-Theme preview should be now available at: http://localhost:3000
+Use `docker exec -it stencil_<theme_name> bash` and attach to a running container anytime in order to access shell and execute `stencil` commands.
 
-### Executing Stencil commands
+`docker exec -it stencil_cornerstone bash` 
 
-#### In the running container
-
-Attach to a running container anytime in order to access shell and execute `stencil` commands.
-
-`docker exec -it stencil_dev bash` 
-
-#### On compose
+### On compose
 
 It's possible to pass `stencil` command arguments by using env variable `STENCIL` on `docker-compose` run.
 
-Example: `STENCIL="start -v Bold -c 1" docker-compose up`.
+Example: `THEME="cornerstone" STENCIL="start -v Bold -c 1" docker-compose up`.
 
-Command above will start the Bold variant of Cornerstone theme.
+Command above will start the Bold variant of a theme.
 
-### Helper scripts
-
-#### Build
-
-Script is bundling container build, npm install and Stencil init actions.
-
-Name: `build.sh`
-
-Usage: `build.sh <theme_name>`
-
-Example: `build.sh cornerstone`
+### Helpers
 
 #### Start
 
-Script is starting Stencil with the template placed in `theme/cornerstone`.
-
-Name: `start_cornerstone.sh`
+Customize `start.sh` with your theme (container) name, variation and channel, then just run it.
