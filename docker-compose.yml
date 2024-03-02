@@ -13,3 +13,5 @@ services:
       - ./theme:/theme
     environment:
       - "STENCIL=${STENCIL}"
+      - "STORE_URL=${STORE_URL}"
+      - "API_TOKEN=${API_TOKEN}"
