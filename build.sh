@@ -3,8 +3,7 @@
 SETUP_CONTAINER=stencil_init
 RUNTIME_CONTAINER=stencil_dev
 
-THEME="${1}"
-THEME_DIRECTORY="$(pwd)/themes/${THEME}"
+THEME_DIRECTORY="$(pwd)/theme/"
 
 SETUP_CONTAINER_EXISTS=$(docker container ls -a | grep ${SETUP_CONTAINER})
 if [ "${SETUP_CONTAINER_EXISTS}" ]

@@ -1,3 +1,6 @@
 .idea
 .env
-/themes
+.DS_Store
+/theme
+start_*.sh
+!start.sh

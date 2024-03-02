@@ -10,6 +10,6 @@ services:
     command:
       - stencil.sh
     volumes:
-      - ./themes/${THEME}:/theme
+      - ./theme:/theme
     environment:
       - "STENCIL=${STENCIL}"
