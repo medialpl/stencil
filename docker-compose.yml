@@ -2,7 +2,6 @@ services:
   stencil:
     build:
       context: ./env/node_stencil
-    container_name: stencil_${THEME}
     ports:
       - 3000:3000
     command:
