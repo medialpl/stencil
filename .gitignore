@@ -3,4 +3,4 @@
 .DS_Store
 /theme
 start_*.sh
-!start.sh
+start.sh

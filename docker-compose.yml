@@ -1,9 +1,7 @@
-version: "3.9"
 services:
   stencil:
     build:
       context: ./env/node_stencil
-    image: stencil_${THEME}
     container_name: stencil_${THEME}
     ports:
       - 3000:3000
