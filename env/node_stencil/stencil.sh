@@ -2,7 +2,9 @@
 
 if [ "${STENCIL}" ]; then
  if [ "${STENCIL}" = "install" ]; then
-  npm install && stencil init --url "${STORE_URL}" --token "${API_TOKEN}" --apiHost "https://api.bigcommerce.com" --port 3000
+  npm install && stencil init --url "${STORE_URL}" --token "${API_TOKEN}" --apiHost "https://api.bigcommerce.com" --port 3000 --packageManager npm
+ elif [ "${STENCIL}" = "npm install" ]; then
+  npm install
  elif [ "${STENCIL}" = "init" ]; then
   stencil init --url "${STORE_URL}" --token "${API_TOKEN}" --apiHost "https://api.bigcommerce.com" --port 3000
  else
