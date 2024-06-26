@@ -1,4 +1,4 @@
-FROM node:18.15.0
+FROM node:18.20.3
 WORKDIR /theme
 RUN npm install -g @bigcommerce/stencil-cli
 COPY stencil.sh /
